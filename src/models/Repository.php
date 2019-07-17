@@ -15,13 +15,22 @@ class Repository extends Model
      */
     public $visible = 'public';
 
+    protected $path;
+
     public function path()
     {
-        return $this->entity_type.'\\'.$this->entity_id.'\\';
+        if(is_null($this->path)) {
+            $path = $this->entity_type.'\\'.$this->entity_id.'\\';
+            $path = strtolower($path);
+            $path = str_replace('app\\', '', $path);
+            $this->path = $path;
+        }
+
+        return $path;
     }
 
-    public function put($file)
+    public function put($fileName, $content)
     {
-        return Storage::put($file, $this->path(), $this->visible);
+        return Storage::put($this->path().$fileName, $content, $this->visible);
     }
 }
