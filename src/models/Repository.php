@@ -26,7 +26,7 @@ class Repository extends Model
             $this->path = $path;
         }
 
-        return $path;
+        return $this->path;
     }
 
     public function put($fileName, $content)
