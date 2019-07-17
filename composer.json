@@ -1,0 +1,25 @@
+{
+    "name": "bedoke/model-repositories",
+    "description": "Connect file repositories to your eloquent models",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kevin Berg",
+            "email": "mail@kevinberg.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "bedoke\\ModelRepositories\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "bedoke\\ModelRepositories\\ModelRepositoriesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
