@@ -20,7 +20,8 @@ class ModelRepositoriesServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        /* $this->app->bind('ModelRepositories', 'bedoke\ModelRepositories\ModelRepositories');
+        $this->app->bind('ModelRepositories', 'bedoke\ModelRepositories\ModelRepositories');
+        /*
         $this->mergeConfigFrom(
             __DIR__.'/config/model_repositories.php', 'model_repositories'
         ); */

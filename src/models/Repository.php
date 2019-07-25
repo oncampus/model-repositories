@@ -1,36 +1,37 @@
 <?php
 
 namespace bedoke\ModelRepositories\Models;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use bedoke\ModelRepositories\Facades\ModelRepositories;
 
 class Repository extends Model
 {
-    /**
-     * This variable tells whether the current
-     * repository class is public or private.
-     * It can be overwritten in extended classes.
-     *
-     * @var string
-     */
-    public $visible = 'public';
-
-    protected $path;
+    protected $fillable = [
+        'entity_type',
+        'entity_id',
+        'path'
+    ];
 
     public function path()
     {
         if(is_null($this->path)) {
-            $path = $this->entity_type.'\\'.$this->entity_id.'\\';
-            $path = strtolower($path);
-            $path = str_replace('app\\', '', $path);
-            $this->path = $path;
+            $this->path = ModelRepositories::buildPath(
+                $this->entity_type,
+                $this->entity_id,
+                $this->visibility
+            );
+            $this->save();
         }
 
         return $this->path;
     }
 
-    public function put($fileName, $content)
+    public function put($fileName, $content, $driver = 'local')
     {
-        return Storage::put($this->path().$fileName, $content, $this->visible);
+        return Storage::disk($driver)
+            ->put($this->path().$fileName, $content, $this->visibility);
     }
+
 }

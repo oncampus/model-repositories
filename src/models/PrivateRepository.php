@@ -6,14 +6,15 @@ use bedoke\ModelRepositories\Models\Repository;
 class PrivateRepository extends Repository
 {
     protected $table = 'private_repositories';
-    protected $guarded = [];
+    public $visibility = 'private';
 
     /**
-     * Overwrites the visibility of
-     * the parent class (Repository).
+     * Relation to the connected entity.
      *
-     * @var string
+     * @return void
      */
-    public $visible = 'private';
-
+    public function entity()
+    {
+        return $this->morphTo();
+    }
 }
