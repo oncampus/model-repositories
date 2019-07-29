@@ -61,11 +61,15 @@ class ModelRepositories
      */
     private function createPublicRepository(Object $entity) : bool
     {
+        if(!isset($entity->id)) {
+            return false;
+        }
+
         $publicRepo = new PublicRepository();
         $publicRepo->entity_type = get_class($entity);
         $publicRepo->entity_id = $entity->id;
 
-        $path = $publicRepo->visibility.'\\'.$publicRepo->entity_type.'\\'.$publicRepo->entity_id.'\\';
+        $path = $this->buildPath($publicRepo->entity_type, $entity->id, $publicRepo->visibility);
         $path = strtolower($path);
         $path = str_replace('app\\', '', $path);
 
@@ -82,11 +86,15 @@ class ModelRepositories
      */
     private function createPrivateRepository(Object $entity) : bool
     {
+        if(!isset($entity->id)) {
+            return false;
+        }
+
         $privateRepo = new PrivateRepository();
         $privateRepo->entity_type = get_class($entity);
         $privateRepo->entity_id = $entity->id;
 
-        $path = $privateRepo->visibility.'\\'.$privateRepo->entity_type.'\\'.$privateRepo->entity_id.'\\';
+        $path = $this->buildPath($privateRepo->entity_type, $entity->id, $privateRepo->visibility);
         $path = strtolower($path);
         $path = str_replace('app\\', '', $path);
 
