@@ -7,17 +7,17 @@ class ModelRepositoriesServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        $this->publishes([
+       /*  $this->publishes([
             __DIR__.'/config/model_repositories.php' => config_path('model_repositories.php'),
-        ]);
+        ]); */
     }
 
     public function register()
     {
         $this->app->bind('ModelRepositories', 'bedoke\ModelRepositories\ModelRepositories');
-        $this->mergeConfigFrom(
+        /* $this->mergeConfigFrom(
             __DIR__.'/config/model_repositories.php', 'model_repositories'
-        );
+        ); */
     }
 
 }

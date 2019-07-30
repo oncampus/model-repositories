@@ -69,11 +69,11 @@ class ModelRepositories
         $publicRepo->entity_type = get_class($entity);
         $publicRepo->entity_id = $entity->id;
 
-        $path = $this->buildPath($publicRepo->entity_type, $entity->id, $publicRepo->visibility);
-        $path = strtolower($path);
-        $path = str_replace('app\\', '', $path);
-
-        $publicRepo->path = $path;
+        $publicRepo->path = $this->buildPath(
+            $publicRepo->entity_type,
+            $entity->id,
+            $publicRepo->visibility
+        );
 
         return $publicRepo->save();
     }
@@ -94,11 +94,11 @@ class ModelRepositories
         $privateRepo->entity_type = get_class($entity);
         $privateRepo->entity_id = $entity->id;
 
-        $path = $this->buildPath($privateRepo->entity_type, $entity->id, $privateRepo->visibility);
-        $path = strtolower($path);
-        $path = str_replace('app\\', '', $path);
-
-        $privateRepo->path = $path;
+        $privateRepo->path = $this->buildPath(
+            $privateRepo->entity_type,
+            $entity->id,
+            $privateRepo->visibility
+        );
 
         return $privateRepo->save();
     }
