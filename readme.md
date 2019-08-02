@@ -10,8 +10,8 @@ This package ensures that your models get their own storage directories.
 
 ## Extend the subjected model classes
 
-    use bedoke\ModelRepositories\Traits\PublicRepository; // for public repositories
-    use bedoke\ModelRepositories\Traits\PrivateRepository; // for private repositories
+    use Oncampus\ModelRepositories\Traits\PublicRepository; // for public repositories
+    use Oncampus\ModelRepositories\Traits\PrivateRepository; // for private repositories
 
 All models can have both repository types!
 
