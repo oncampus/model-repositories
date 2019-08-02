@@ -1,12 +1,12 @@
 <?php
 
-namespace bedoke\ModelRepositories\Tests\Unit;
+namespace Oncampus\ModelRepositories\Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use bedoke\ModelRepositories\Facades\ModelRepositories;
-use bedoke\ModelRepositories\Models\PublicRepository;
+use Oncampus\ModelRepositories\Facades\ModelRepositories;
+use Oncampus\ModelRepositories\Models\PublicRepository;
 
 class RepositoryTest extends TestCase
 {

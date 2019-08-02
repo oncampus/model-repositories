@@ -1,10 +1,10 @@
 <?php
 
-namespace bedoke\ModelRepositories\Models;
+namespace Oncampus\ModelRepositories\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
-use bedoke\ModelRepositories\Facades\ModelRepositories;
+use Oncampus\ModelRepositories\Facades\ModelRepositories;
 
 
 class Repository extends Model

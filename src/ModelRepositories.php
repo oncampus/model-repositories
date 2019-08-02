@@ -1,11 +1,11 @@
 <?php
-namespace bedoke\ModelRepositories;
+namespace Oncampus\ModelRepositories;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
-use bedoke\ModelRepositories\Models\Repository;
-use bedoke\ModelRepositories\Models\PrivateRepository;
-use bedoke\ModelRepositories\Models\PublicRepository;
+use Oncampus\ModelRepositories\Models\Repository;
+use Oncampus\ModelRepositories\Models\PrivateRepository;
+use Oncampus\ModelRepositories\Models\PublicRepository;
 
 class ModelRepositories
 {

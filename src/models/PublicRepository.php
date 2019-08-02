@@ -1,7 +1,7 @@
 <?php
 
-namespace bedoke\ModelRepositories\Models;
-use bedoke\ModelRepositories\Models\Repository;
+namespace Oncampus\ModelRepositories\Models;
+use Oncampus\ModelRepositories\Models\Repository;
 
 class PublicRepository extends Repository
 {

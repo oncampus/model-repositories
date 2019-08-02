@@ -1,6 +1,6 @@
 <?php
 
-namespace bedoke\ModelRepositories\Facades;
+namespace Oncampus\ModelRepositories\Facades;
 use Illuminate\Support\Facades\Facade;
 
 class ModelRepositories extends Facade

@@ -1,13 +1,13 @@
 <?php
 
-namespace bedoke\ModelRepositories\Traits;
+namespace Oncampus\ModelRepositories\Traits;
 
 
 trait PrivateRepository {
 
     public function privateRepository()
     {
-        return $this->morphOne('bedoke\ModelRepositories\Models\PrivateRepository', 'entity');
+        return $this->morphOne('Oncampus\ModelRepositories\Models\PrivateRepository', 'entity');
     }
 
 }
