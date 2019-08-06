@@ -6,7 +6,7 @@ This package ensures that your models get their own storage directories.
 
 ## Get the package
 
-    composer command is not available yet
+    composer require oncampus/model-repositories
 
 ## Extend the subjected model classes
 
